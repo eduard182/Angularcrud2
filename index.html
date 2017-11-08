@@ -1,75 +1,77 @@
 <!DOCTYPE html>
-<html >
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <title>Mantenimiento simple con Angular-Material y lodash</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/angular-material/0.10.1/angular-material.css'>
+    <meta charset="UTF-8">
+    <title>Mantenimiento simple con Angular-Material y lodash</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <style>
-      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
-      .full-heigth {
-    height: -moz-calc(100% - 64px); 
-    height: -webkit-calc(100% - 64px);
-    height: calc(100% - 64px);
-}
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/angular-material/0.10.1/angular-material.css'>
 
-.dialog-95 {
-    width: 95%;
-    height: auto;
-}
+    <style>
+        /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+        
+        .full-heigth {
+            height: -moz-calc(100% - 64px);
+            height: -webkit-calc(100% - 64px);
+            height: calc(100% - 64px);
+        }
+        
+        .dialog-95 {
+            width: 95%;
+            height: auto;
+        }
     </style>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
 </head>
 
 <body>
-  <span ng-app="simpleCRUD" ng-controller="SimpleCRUDController">
+    <span ng-app="simpleCRUD" ng-controller="SimpleCRUDController">
     <md-toolbar>
         <div class="md-toolbar-tools">
             Simple CRUD Angular Material
             <span flex></span>
-            <md-menu>
-                <md-button class="md-icon-button" aria-label="Orden" ng-click="abrirMenu($mdOpenMenu, $event)">
-                    <md-icon md-svg-icon="white_order"></md-icon>
-                    <md-tooltip md-delay="1500" md-autohide="true">Orden</md-tooltip>
-                </md-button>
-                <md-menu-content width="4">
-                    <md-menu-item>
-                        <md-button class="md-button" ng-click="ordenarPor('+')">Ascendente</md-button>
-                    </md-menu-item>
-                    <md-menu-divider></md-menu-divider>
-                    <md-menu-item>
-                        <md-button class="md-button" ng-click="ordenarPor('-')">Descendente</md-button>
-                    </md-menu-item>
-                </md-menu-content>
-            </md-menu>
-            <md-menu>
-                <md-button class="md-icon-button" aria-label="Clasificar" ng-click="abrirMenu($mdOpenMenu, $event)">
-                    <md-icon md-svg-icon="white_classification"></md-icon>
-                    <md-tooltip md-delay="1500" md-autohide="true">Clasificar</md-tooltip>
-                </md-button>
-                <md-menu-content width="4">
-                    <md-menu-item>
-                        <md-button class="md-button" ng-click="clasificarPor('name')">Name</md-button>
-                    </md-menu-item>
-                    <md-menu-divider></md-menu-divider>
-                    <md-menu-item>
-                        <md-button class="md-button" ng-click="clasificarPor('lastname')">Last name</md-button>
-                    </md-menu-item>
-                    <md-menu-divider></md-menu-divider>
-                    <md-menu-item>
-                        <md-button class="md-button" ng-click="clasificarPor('email')">Email</md-button>
-                    </md-menu-item>
-                    <md-menu-divider></md-menu-divider>
-                    <md-menu-item>
-                        <md-button class="md-button" ng-click="clasificarPor('direction')">Direction</md-button>
-                    </md-menu-item>
-                </md-menu-content>
-            </md-menu>
-        </div>
+    <md-menu>
+        <md-button class="md-icon-button" aria-label="Orden" ng-click="abrirMenu($mdOpenMenu, $event)">
+            <md-icon md-svg-icon="white_order"></md-icon>
+            <md-tooltip md-delay="1500" md-autohide="true">Orden</md-tooltip>
+        </md-button>
+        <md-menu-content width="4">
+            <md-menu-item>
+                <md-button class="md-button" ng-click="ordenarPor('+')">Ascendente</md-button>
+            </md-menu-item>
+            <md-menu-divider></md-menu-divider>
+            <md-menu-item>
+                <md-button class="md-button" ng-click="ordenarPor('-')">Descendente</md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu>
+    <md-menu>
+        <md-button class="md-icon-button" aria-label="Clasificar" ng-click="abrirMenu($mdOpenMenu, $event)">
+            <md-icon md-svg-icon="white_classification"></md-icon>
+            <md-tooltip md-delay="1500" md-autohide="true">Clasificar</md-tooltip>
+        </md-button>
+        <md-menu-content width="4">
+            <md-menu-item>
+                <md-button class="md-button" ng-click="clasificarPor('name')">Name</md-button>
+            </md-menu-item>
+            <md-menu-divider></md-menu-divider>
+            <md-menu-item>
+                <md-button class="md-button" ng-click="clasificarPor('lastname')">Last name</md-button>
+            </md-menu-item>
+            <md-menu-divider></md-menu-divider>
+            <md-menu-item>
+                <md-button class="md-button" ng-click="clasificarPor('email')">Email</md-button>
+            </md-menu-item>
+            <md-menu-divider></md-menu-divider>
+            <md-menu-item>
+                <md-button class="md-button" ng-click="clasificarPor('direction')">Direction</md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu>
+    </div>
     </md-toolbar>
     <md-content class="full-heigth">
         <md-list>
@@ -150,11 +152,7 @@
         </md-dialog>
     </script>
     <script type="text/ng-template" id="icons_24x24.svg">
-    <svg 
-         width="24"
-         height="24" 
-         viewBox="0 0 24 24" 
-         xmlns="http://www.w3.org/2000/svg">
+        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <g id="white_person_add">
             <path d="M0 0h24v24H0z" fill="none" />
             <path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
@@ -185,15 +183,16 @@
         </g>
     </svg>
     </script>
-</span>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-animate.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-aria.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-messages.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/angular-material/0.10.1/angular-material.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.js'></script>
+    </span>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-animate.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-aria.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-messages.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-material/0.10.1/angular-material.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.js'></script>
 
-    <script  src="js/index.js"></script>
+    <script src="js/index.js"></script>
 
 </body>
+
 </html>
