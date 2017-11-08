@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Mantenimiento simple con Angular-Material y lodash</title>
+    <title>Crud</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/angular-material/0.10.1/angular-material.css'>
@@ -31,7 +31,7 @@
     <span ng-app="simpleCRUD" ng-controller="SimpleCRUDController">
     <md-toolbar>
         <div class="md-toolbar-tools">
-            Simple CRUD Angular Material
+            Crud Angular
             <span flex></span>
     <md-menu>
         <md-button class="md-icon-button" aria-label="Orden" ng-click="abrirMenu($mdOpenMenu, $event)">
@@ -117,7 +117,7 @@
                             <input type="text" readonly name="id" ng-model="view.selectedItem.id" />
                         </md-input-container>
                         <md-input-container>
-                            <label>Name</label>
+                            <label>Nombre</label>
                             <input type="text" name="name" required md-maxlength="50" ng-model="view.selectedItem.name" />
                             <ng-messages for="inputForm.name.$error">
                                 <ng-message when="required">El nombre es obligatorio</ng-message>
@@ -125,7 +125,7 @@
                             </ng-messages>
                         </md-input-container>
                         <md-input-container>
-                            <label>Last name</label>
+                            <label>Apellido</label>
                             <input type="text" name="lastname" md-maxlength="50" ng-model="view.selectedItem.lastname" />
                             <ng-messages for="inputForm.lastname.$error">
                                 <ng-message when="md-maxlength">Use 50 caracteres o menos para el nombre</ng-message>
@@ -140,7 +140,7 @@
                             </ng-messages>
                         </md-input-container>
                         <md-input-container>
-                            <label>Direction</label>
+                            <label>Documento</label>
                             <textarea rows="2" name="direccion" md-maxlength="100" ng-model="view.selectedItem.direction"></textarea>
                             <ng-messages for="inputForm.direccion.$error">
                                 <ng-message when="md-maxlength">Use 100 caracteres o menos para la dirección</ng-message>
